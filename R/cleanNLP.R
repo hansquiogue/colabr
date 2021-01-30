@@ -4,15 +4,19 @@
 #' Please ensure you have installed Anaconda using setup_anaconda
 #' first and have installed the spacyr package.
 #'
-#' @param env A string name for the conda environment
+#' @param env A string name for the conda environment.
+#' Default value is 'r-reticulate'.
 #' @export
 setup_cleanNLP <- function(env = 'r-reticulate') {
+
+    # TODO: Error checking
 
     # Setup spacyr and install spacy
     colabr::setup_spacyr(env)
 
-    # Installs cleanNLP
+    # Installs cleanNLP and stanfordnlp
     system('pip install cleannlp')
+    system('pip install stanfordnlp')
 
     # Success message
     print('Success! Models and Python backends should produce no errors now.')
