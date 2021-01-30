@@ -11,5 +11,7 @@ setup_anaconda(env = "r-reticulate")
 Default value is 'r-reticulate'.}
 }
 \description{
-Setup an Anaconda environment to work in Google Colab
+Setup an Anaconda environment to work in Google Colab. Downloads and
+installs Anaconda and creates a new environment based on user
+input.
 }
