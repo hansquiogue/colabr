@@ -2,14 +2,14 @@
 % Please edit documentation in R/anaconda.R
 \name{setup_anaconda}
 \alias{setup_anaconda}
-\title{Setup Anaconda to work in Google Colab}
+\title{Setup an Anaconda environment}
 \usage{
 setup_anaconda(env = "r-reticulate")
 }
 \arguments{
-\item{env}{A string name for the conda environment.}
+\item{env}{A string name for the conda environment.
+Default value is 'r-reticulate'.}
 }
 \description{
-Downloads and installs Anaconda in Google Colab. Also
-uses a user specified environment variable.
+Setup an Anaconda environment to work in Google Colab
 }

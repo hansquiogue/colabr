@@ -7,7 +7,8 @@
 setup_cleanNLP(env = "r-reticulate")
 }
 \arguments{
-\item{env}{A string name for the conda environment}
+\item{env}{A string name for the conda environment.
+Default value is 'r-reticulate'.}
 }
 \description{
 Setups and initalizes the cleanNLP package to work in Google Colab.

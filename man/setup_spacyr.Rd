@@ -4,10 +4,15 @@
 \alias{setup_spacyr}
 \title{Setup spacyr to work in Google Colab}
 \usage{
-setup_spacyr(env = "r-reticulate")
+setup_spacyr(env = "r-reticulate", lang_models = "en_core_web_sm")
 }
 \arguments{
-\item{env}{A string name for the conda environment}
+\item{env}{A string name for the conda environment.
+Default is called 'r-reticulate'.}
+
+\item{lang_models}{The language package for loading spaCy.
+Default is 'en_core_web_sm' (English). For more models
+and languages, go to spacy.io/usage/models.}
 }
 \description{
 Setups and initalizes the spacyr package to work in Google Colab.
