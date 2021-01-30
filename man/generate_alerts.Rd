@@ -4,14 +4,14 @@
 \alias{generate_alerts}
 \title{Generate Google Colab alerts}
 \usage{
-generate_alerts(embedded = TRUE, width = 1000, height = 500)
+generate_alerts(width = 1000, height = 500, embedded = TRUE)
 }
 \arguments{
 \item{width}{A numeric value of the width to display the embedded webpage.}
 
 \item{height}{A numeric value of the height to display the embedded webpage.}
 
-\item{embeded}{A boolean value on whether or not to display an embedded version
+\item{embedded}{A boolean value on whether or not to display an embedded version
 of the alert webpage. If set to false, a link to the webpage is printed instead.}
 }
 \description{

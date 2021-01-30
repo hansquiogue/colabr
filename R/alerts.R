@@ -1,14 +1,14 @@
 #' Generate Google Colab alerts
 #'
 #' Display a link or an embedded webpage that helps generate Colab alerts.
+#' For more details, view this tutorial notebook: coming soon!
 #'
-#' @importFrom IRdisplay display_html
-#' @param embeded A boolean value on whether or not to display an embedded version
-#' of the alert webpage. If set to false, a link to the webpage is printed instead.
 #' @param width A numeric value of the width to display the embedded webpage.
 #' @param height A numeric value of the height to display the embedded webpage.
+#' @param embedded A boolean value on whether or not to display an embedded version
+#' of the alert webpage. If set to false, a link to the webpage is printed instead.
 #' @export
-generate_alerts <- function(embedded = TRUE, width = 1000, height = 500) {
+generate_alerts <- function(width = 1000, height = 500, embedded = TRUE) {
 
   # String of HTML code to display embedded webpage
   html_str <- paste('<iframe src="https://quiogue.me/google-colab-alerts" width=',
@@ -17,7 +17,7 @@ generate_alerts <- function(embedded = TRUE, width = 1000, height = 500) {
 
   # Display embedded webpage
   if (embedded) {
-    display_html(html_str)
+    IRdisplay::display_html(html_str)
 
   # Print webpage link
   } else {

@@ -6,7 +6,9 @@ Author: Hans Quiogue
 Maintainer: Hans Quiogue <hans@redacted.com>
 Description: A simple package to fix other R package issues and 
     help create better notebooks in Google Colab.
-License: MIT
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
+Imports:
+  IRdisplay (>= 1.0.0)
 RoxygenNote: 7.1.1
