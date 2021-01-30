@@ -1,13 +1,10 @@
-#' Setup an Anaconda environment
+#' Download and install Anaconda in Google Colab
 #'
-#' Setup an Anaconda environment to work in Google Colab. Downloads and
-#' installs Anaconda and creates a new environment based on user
-#' input.
-#'
-#' @param env A string name for the conda environment.
-#' Default value is 'r-reticulate'.
+#' Downloads and installs Anaconda. Stops runtime to restart it.
+#' This function only needs to be run once for every Colab
+#' runtime session.
 #' @export
-setup_anaconda <- function(env = 'r-reticulate') {
+download_anaconda <- function() {
   # TODO: Error checking
 
   # TODO: Re-comment, progress bars?
@@ -18,6 +15,18 @@ setup_anaconda <- function(env = 'r-reticulate') {
   system("conda update -n base -c defaults conda -y")
   system("conda config --add channels bioconda")
   system("conda config --add channels conda-forge")
+
+  print('Stopping runtime! Do not worry about the crash error, it is on purpose.')
+  print('Restarting notebook...')
+  reticulate::py_run_string('import os; os.kill(os.getpid(), 9)')
+}
+
+#' Setup an Anaconda environment
+#'
+#' Setup an Anaconda environment to work in Google Colab.
+#' @param env A string name for the conda environment.
+#' Default value is 'r-reticulate'.
+setup_anaconda <- function(env = 'r-reticulate') {
 
   # Forces conda environment based on user input
   reticulate::use_condaenv(env, required = TRUE)
