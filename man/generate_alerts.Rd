@@ -4,7 +4,7 @@
 \alias{generate_alerts}
 \title{Generate Google Colab alerts}
 \usage{
-generate_alerts(embedded = TRUE, width = 800, height = 500)
+generate_alerts(embedded = TRUE, width = 1000, height = 500)
 }
 \arguments{
 \item{width}{A numeric value of the width to display the embedded webpage.}
