@@ -10,5 +10,6 @@ License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Imports:
-  IRdisplay (>= 1.0.0)
+  IRdisplay (>= 1.0.0),
+  reticulate (>= 1.18.0)
 RoxygenNote: 7.1.1
