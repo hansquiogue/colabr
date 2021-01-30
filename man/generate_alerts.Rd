@@ -16,4 +16,5 @@ of the alert webpage. If set to false, a link to the webpage is printed instead.
 }
 \description{
 Display a link or an embedded webpage that helps generate Colab alerts.
+For more details, view this tutorial notebook: coming soon!
 }
