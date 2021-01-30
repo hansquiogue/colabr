@@ -16,7 +16,7 @@ generate_alerts <- function(embedded = TRUE, width = 800, height = 500) {
 
   # Display embedded webpage
   if (embedded) {
-    IRdisplay::display_html(cat(html_str))
+    IRdisplay::display_html(as.character(cat(html_str)))
 
   # Print webpage link
   } else {
