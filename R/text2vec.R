@@ -14,8 +14,14 @@ plot_lda_text2vec <- function(lda_model) {
   number <- sample.int(100000000, 1)
   domain <- paste(base, as.character(number), sep = '')
 
+  # Kill all services
+  system('killall lt')
+
+  # Run localtunnel
+  system(paste('lt --port 4321 --subdomain ', domain, sep = ''))
+
   # Message that domain is generated
-  print(paste('View plot at domain:', domain))
+  print(paste('View plot at domain: http://', domain, '.loca.lt', sep = ''))
   print('Do not stop running this code until you are done with the visuals.')
   print('Ignore local domain that is generated below.')
 
