@@ -1,10 +1,11 @@
 #' Plot LDA models from text2vec in Google Colab
 #'
-#' @param lda_model A lda model object from text2vec.
+#' Generates a link to use for text2vec LDA plots in Google Colab
 #' @export
-plot_lda_text2vec <- function(lda_model) {
+generate_lda_plot_link <- function() {
 
   # TODO: Error checking
+  # TODO: Port as argument
 
   # Download localtunnel
   system('npm install -g localtunnel')
@@ -22,9 +23,4 @@ plot_lda_text2vec <- function(lda_model) {
 
   # Message that domain is generated
   print(paste('View plot at domain: http://', domain, '.loca.lt', sep = ''))
-  print('Do not stop running this code until you are done with the visuals.')
-  print('Ignore local domain that is generated below.')
-
-  # Starting server
-  lda_model$plot(open.browser = TRUE)
 }
