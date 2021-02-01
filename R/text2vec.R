@@ -32,8 +32,8 @@ plot_lda_text2vec <- function(lda_model, embedded = TRUE, port = 4321) {
 
   # Embedding is shown
   if (embedded) {
-    IRdisplay::display_html(paste('<iframe src="http://', domain, '.loca.lt"',
-                                  ' width=800 height=800></iframe>', sep = ''))
+    IRdisplay::display_html(paste('<iframe src="//', domain, '.loca.lt"',
+                                  ' width=1000 height=800></iframe>', sep = ''))
 
   # Embedding is not shown
   } else {
