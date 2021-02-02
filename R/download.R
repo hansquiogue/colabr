@@ -49,7 +49,6 @@ download_drive <- function(drive_link) {
 
     # Loads other dependencies if needed
     if (file.exists("/usr/local/lib/python3.6/dist-packages/google/colab/_ipython.py")) {
-      surpressMessages(install.packages("R.utils"))
       surpressMessages(library("R.utils"))
       surpressMessages(library("httr"))
       my_check <- function() { return(TRUE) }

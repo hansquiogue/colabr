@@ -13,5 +13,6 @@ Imports:
   IRdisplay (>= 1.0.0),
   reticulate (>= 1.18.0),
   tidyverse (>= 1.3.0),
-  googledrive (>= 1.0.1)
+  googledrive (>= 1.0.1),
+  R.utils (>= 2.10.1)
 RoxygenNote: 7.1.1
