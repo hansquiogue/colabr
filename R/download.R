@@ -43,9 +43,9 @@ download_drive <- function(drive_link) {
             'any sub-folders inside. Otherwise, an error might occur.'))
 
     # Load libraries
-    library(tidyverse)
-    library(googledrive)
-    library(reticulate)
+    suppressPackageStartupMessages(library(tidyverse))
+    suppressPackageStartupMessages(library(googledrive))
+    suppressPackageStartupMessages(library(reticulate))
 
     # Loads other dependencies if needed
     if (file.exists("/usr/local/lib/python3.6/dist-packages/google/colab/_ipython.py")) {
