@@ -1,7 +1,7 @@
 Package: colabr
 Type: Package
 Title: Functionalities for Google Colab notebooks running R
-Version: 0.1.0
+Version: 0.1.1
 Author: Hans Quiogue 
 Maintainer: Hans Quiogue <hans@redacted.com>
 Description: A simple package to fix other R package issues and 
@@ -11,5 +11,7 @@ Encoding: UTF-8
 LazyData: true
 Imports:
   IRdisplay (>= 1.0.0),
-  reticulate (>= 1.18.0)
+  reticulate (>= 1.18.0),
+  tidyverse (>= 1.3.0),
+  googledrive (>= 1.0.1)
 RoxygenNote: 7.1.1
