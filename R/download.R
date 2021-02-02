@@ -49,8 +49,8 @@ download_drive <- function(drive_link) {
 
     # Loads other dependencies if needed
     if (file.exists("/usr/local/lib/python3.6/dist-packages/google/colab/_ipython.py")) {
-      surpressMessages(library("R.utils"))
-      surpressMessages(library("httr"))
+      suppressMessages(library("R.utils"))
+      suppressMessages(library("httr"))
       my_check <- function() { return(TRUE) }
       reassignInPackage("is_interactive", pkgName = "httr", my_check)
       options(rlang_interactive = TRUE)
