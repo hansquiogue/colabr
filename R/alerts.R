@@ -10,6 +10,13 @@
 #' @export
 generate_alerts <- function(width = 1000, height = 500, embedded = TRUE) {
 
+  # TODO: Check for Colab
+
+  # Error handling for arguments
+  if (!is.numeric(width) | !is.numeric(height)) stop('width or height arguments need to be numeric.')
+  if (width < 1 | height < 1) stop('width or height cannot be 0 or negative.')
+  if (!is.logical(embedded)) stop('embedded needs to be TRUE or FALSE')
+
   # String of HTML code to display embedded webpage
   html_str <- paste('<iframe src="https://quiogue.me/google-colab-alerts" width=',
                     as.character(width), " height=", as.character(height),
