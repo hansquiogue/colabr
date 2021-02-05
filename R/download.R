@@ -12,6 +12,9 @@
 download_drive <- function(drive_link) {
 
   # Error checking
+  # Checks if running on colab enviroment
+  colabr::check_colab()
+
   # Ensures drive link is a string
   if (!is.character(drive_link) | length(drive_link) != 1) {
     stop('drive_link must be a string.')

@@ -10,7 +10,8 @@
 #' @export
 generate_alerts <- function(width = 1000, height = 500, embedded = TRUE) {
 
-  # TODO: Check for Colab
+  # Checks if running on colab enviroment
+  colabr::check_colab()
 
   # Error handling for arguments
   if (!is.numeric(width) | !is.numeric(height)) stop('width or height arguments need to be numeric.')
@@ -28,6 +29,6 @@ generate_alerts <- function(width = 1000, height = 500, embedded = TRUE) {
 
   # Print webpage link
   } else {
-    print('Generate alerts at: https://quiogue.me/google-colab-alerts')
+    message('Generate alerts at: https://quiogue.me/google-colab-alerts')
   }
 }

@@ -20,6 +20,8 @@
 #' Default value is 4321.
 #' @export
 plot_lda_text2vec <- function(lda_model, embedded = TRUE, port = 4321) {
+  # Checks if running on colab enviroment
+  colabr::check_colab()
 
   # Error handling
   if (!is.logical(embedded)) stop('embedded must be TRUE or FALSE')
@@ -67,12 +69,12 @@ plot_lda_text2vec <- function(lda_model, embedded = TRUE, port = 4321) {
   # Embedding is not shown
   } else {
     # Message that domain is generated
-    print(paste('View plot at domain: http://', domain, '.loca.lt', sep = ''))
+    message(paste('View plot at domain: http://', domain, '.loca.lt', sep = ''))
   }
 
   # Other informative messages
-  print('Do not stop running this code until you are done with the visuals.')
-  print('Ignore local domain that is generated below.')
+  message('Do not stop running this code until you are done with the visuals.')
+  message('Ignore local domain that is generated below.')
 
   # Starting server
   lda_model$plot(open.browser = TRUE)

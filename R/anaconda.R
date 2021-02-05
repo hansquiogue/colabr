@@ -5,7 +5,8 @@
 #' runtime session.
 #' @export
 download_anaconda <- function() {
-  # TODO: Error checking
+  # Checks if running on colab enviroment
+  colabr::check_colab()
 
   # TODO: Re-comment, progress bars?
   system("wget https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh")
@@ -27,6 +28,8 @@ download_anaconda <- function() {
 #' @param env A string name for the conda environment.
 #' Default value is 'r-reticulate'.
 setup_anaconda <- function(env = 'r-reticulate') {
+  # Checks if running on colab enviroment
+  colabr::check_colab()
 
   # Forces conda environment based on user input
   reticulate::use_condaenv(env, required = TRUE)
@@ -36,5 +39,5 @@ setup_anaconda <- function(env = 'r-reticulate') {
   Sys.setenv(RETICULATE_PYTHON = path)
 
   # Success message
-  print(paste('Conda environment set to:', env))
+  message(paste('Conda environment set to:', env))
 }

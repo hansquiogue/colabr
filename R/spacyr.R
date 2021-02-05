@@ -11,13 +11,16 @@
 #' and languages, go to spacy.io/usage/models.
 #' @export
 setup_spacyr <- function(env = 'r-reticulate', lang_models = 'en_core_web_sm') {
+  # Handles environment
+  if (!is.character(env)) stop('env must be a string')
 
   # Boolean on whether or not library was installed
   lib_installed <- library(spacyr, logical.return = TRUE)
 
   # Spacyr library is installed
   if (lib_installed) {
-    # TODO: Check if Anaconda installed?
+    # Checks if running on colab enviroment
+    colabr::check_colab()
 
     # Installing spacy and setting environment to conda environment
     spacy_install(envname = env, lang_models = lang_models, prompt = FALSE, pip = TRUE)
@@ -27,12 +30,12 @@ setup_spacyr <- function(env = 'r-reticulate', lang_models = 'en_core_web_sm') {
     spacy_initialize(condaenv = env, model = lang_models, python_executable = path)
 
     # Message indicating success
-    print('Spacy installed and initialized.')
-    print(paste(lang_models, 'model downloaded. Use spacy_download_langmodel()',
+    message('Spacy installed and initialized.')
+    message(paste(lang_models, 'model downloaded. Use spacy_download_langmodel()',
                 'to download different language models.'))
 
   # Library not installed
   } else {
-    print('Please install spacyr package prior to using this function.')
+    stop('Please install spacyr package prior to using this function.')
   }
 }

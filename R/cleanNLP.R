@@ -9,7 +9,10 @@
 #' @export
 setup_cleanNLP <- function(env = 'r-reticulate') {
 
-    # TODO: Error checking
+    # Checks if running on colab enviroment
+    colabr::check_colab()
+    # Checks environment is a string
+    if (!is.character(env)) stop('env must be a string')
 
     # Setup spacyr and install spacy
     colabr::setup_spacyr(env)
@@ -19,5 +22,5 @@ setup_cleanNLP <- function(env = 'r-reticulate') {
     system('pip install stanfordnlp')
 
     # Success message
-    print('Success! Models and Python backends should produce no errors now.')
+    message('Success! Models and Python backends should produce no errors now.')
 }
