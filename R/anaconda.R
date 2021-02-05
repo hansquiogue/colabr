@@ -28,8 +28,6 @@ download_anaconda <- function() {
 #' @param env A string name for the conda environment.
 #' Default value is 'r-reticulate'.
 setup_anaconda <- function(env = 'r-reticulate') {
-  # Checks if running on colab enviroment
-  colabr::check_colab()
 
   # Forces conda environment based on user input
   reticulate::use_condaenv(env, required = TRUE)
