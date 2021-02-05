@@ -17,8 +17,8 @@ download_anaconda <- function() {
   system("conda config --add channels bioconda")
   system("conda config --add channels conda-forge")
 
-  print('Stopping runtime! Do not worry about the crash error, it is on purpose.')
-  print('Restarting notebook...')
+  message('Stopping runtime! Do not worry about the crash error, it is on purpose.')
+  message('Restarting notebook...')
   reticulate::py_run_string('import os; os.kill(os.getpid(), 9)')
 }
 
@@ -28,6 +28,8 @@ download_anaconda <- function() {
 #' @param env A string name for the conda environment.
 #' Default value is 'r-reticulate'.
 setup_anaconda <- function(env = 'r-reticulate') {
+  # Checks for colab runtime
+  check_colab()
 
   # Forces conda environment based on user input
   reticulate::use_condaenv(env, required = TRUE)
