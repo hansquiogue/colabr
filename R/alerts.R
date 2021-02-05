@@ -19,7 +19,7 @@ generate_alerts <- function(width = 1000, height = 500, embedded = TRUE) {
   if (!is.logical(embedded)) stop('embedded needs to be TRUE or FALSE')
 
   # String of HTML code to display embedded webpage
-  html_str <- paste('<iframe src="https://quiogue.me/google-colab-alerts" width=',
+  html_str <- paste('<iframe src="//quiogue.me/google-colab-alerts" width=',
                     as.character(width), " height=", as.character(height),
                     '></iframe>', sep = "")
 
