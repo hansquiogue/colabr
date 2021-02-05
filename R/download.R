@@ -60,9 +60,10 @@ download_drive <- function(drive_link) {
     }
 
     # Mount drive
-    message(paste('Autentication needed. Please click the link below',
-                  'and authorize tidyverse for Google Drive access.'))
-    drive_auth(use_oob = TRUE, cache = TRUE)
+    # message(paste('Autentication needed. Please click the link below',
+    #              'and authorize tidyverse for Google Drive access.'))
+
+    drive_deauth()
 
     # Identify folder on Drive
     folder <- drive_get(as_id(drive_link))
