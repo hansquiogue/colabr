@@ -42,7 +42,7 @@ plot_lda_text2vec <- function(lda_model, embedded = TRUE, port = 4321) {
   }
 
   # Checks if localtunnel is installed
-  installed <- system('npm list - g | grep localtunnel')
+  installed <- system('npm list -g | grep localtunnel')
 
   # Exit status of 1 (localtunnel not installed)
   if (installed == 1) {

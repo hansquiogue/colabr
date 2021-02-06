@@ -59,10 +59,7 @@ download_drive <- function(drive_link) {
       options(rlang_interactive = TRUE)
     }
 
-    # Mount drive
-    # message(paste('Autentication needed. Please click the link below',
-    #              'and authorize tidyverse for Google Drive access.'))
-
+    # Puts Drive in de-authorized state
     drive_deauth()
 
     # Identify folder on Drive
