@@ -5,6 +5,10 @@
 #' runtime session.
 #' @export
 download_anaconda <- function() {
+
+  # Checks if Anaconda is installed
+  if (colabr::check_anaconda() == 0) stop('Anaconda is already installed.')
+
   # Checks if running on colab enviroment
   colabr::check_colab()
 
@@ -28,6 +32,12 @@ download_anaconda <- function() {
 #' @param env A string name for the conda environment.
 #' Default value is 'r-reticulate'.
 setup_anaconda <- function(env = 'r-reticulate') {
+
+  # Checks if Anaconda is installed
+  if (colabr::check_anaconda() != 0) stop('Anaconda is not installed.')
+
+  # Checks env
+  if (!is.character(env)) stop('env must be a string.')
   # Checks for colab runtime
   check_colab()
 
@@ -40,4 +50,13 @@ setup_anaconda <- function(env = 'r-reticulate') {
 
   # Success message
   message(paste('Conda environment set to:', env))
+}
+
+#' Checks if Anaconda is installed or not
+#'
+#' @return Exit code of checking conda version
+#' @export
+check_anaconda <- function() {
+  # Exit code of Anaconda version
+  return(system('conda -V'))
 }
