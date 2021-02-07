@@ -1,7 +1,7 @@
 Package: colabr
 Type: Package
 Title: Functionalities for Google Colab notebooks running R
-Version: 0.1.1
+Version: 0.1.5
 Author: Hans Quiogue 
 Maintainer: Hans Quiogue <hans@redacted.com>
 Description: A simple package to fix other R package issues and 

@@ -58,5 +58,5 @@ setup_anaconda <- function(env = 'r-reticulate') {
 #' @export
 check_anaconda <- function() {
   # Exit code of Anaconda version
-  return(system('conda -V'))
+  return(suppressWarnings(system('command -v conda')))
 }
