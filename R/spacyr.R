@@ -13,7 +13,7 @@
 setup_spacyr <- function(env = 'r-reticulate', lang_models = 'en_core_web_sm') {
 
   # Check if Anaconda setup
-  if (reticulate::py_config()$forced != 'RETICULATE_PYTHON') {
+  if (is.null(reticulate::py_config()$forced)) {
     stop('Anaconda not setup. Setup with setup_anaconda().')
   }
 

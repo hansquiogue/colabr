@@ -10,7 +10,7 @@
 setup_cleanNLP <- function(env = 'r-reticulate') {
 
     # Check if Anaconda setup
-    if (reticulate::py_config()$forced != 'RETICULATE_PYTHON') {
+    if (is.null(reticulate::py_config()$forced)) {
         stop('Anaconda not setup. Setup with setup_anaconda().')
     }
 
