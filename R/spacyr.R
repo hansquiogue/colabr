@@ -11,6 +11,12 @@
 #' and languages, go to spacy.io/usage/models.
 #' @export
 setup_spacyr <- function(env = 'r-reticulate', lang_models = 'en_core_web_sm') {
+
+  # Check if Anaconda setup
+  if (reticulate::py_config()$forced != 'RETICULATE_PYTHON') {
+    stop('Anaconda not setup. Setup with setup_anaconda().')
+  }
+
   # Handles environment
   if (!is.character(env)) stop('env must be a string')
 

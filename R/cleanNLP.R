@@ -9,6 +9,11 @@
 #' @export
 setup_cleanNLP <- function(env = 'r-reticulate') {
 
+    # Check if Anaconda setup
+    if (reticulate::py_config()$forced != 'RETICULATE_PYTHON') {
+        stop('Anaconda not setup. Setup with setup_anaconda().')
+    }
+
     # Checks if running on colab enviroment
     colabr::check_colab()
     # Checks environment is a string
