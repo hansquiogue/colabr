@@ -9,6 +9,9 @@ download_anaconda <- function() {
   # Checks if Anaconda is installed
   if (colabr::check_anaconda() == 0) stop('Anaconda is already installed.')
 
+  # Checks if running on colab enviroment
+  colabr::check_colab()
+
   # TODO: Re-comment, progress bars?
   system("wget https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh")
   system("chmod +x Anaconda3-2020.02-Linux-x86_64.sh")
@@ -54,8 +57,6 @@ setup_anaconda <- function(env = 'r-reticulate') {
 #' @return Exit code of checking conda version
 #' @export
 check_anaconda <- function() {
-  # Checks if running on colab enviroment
-  colabr::check_colab()
   # Exit code of Anaconda version
   return(suppressWarnings(system('command -v conda')))
 }
