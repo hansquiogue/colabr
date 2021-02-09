@@ -2,9 +2,10 @@
 #'
 #' @export
 check_colab <- function() {
-  # TODO: Fix needed during Anaconda installation
-  # Import python sys module
-  # sys <- reticulate::import('sys')
-  # Stops if google module does not exist
-  # if (!exists('google', where = sys$modules)) stop('colabr only works on Google Colab.')
+  # Import os module
+  os <- reticulate::import('os')
+  # Tries for Colab environment
+  colab <- try(os$environ['COLAB_GPU'], silent = TRUE)
+  # Non-colab environments will be 'try-error'
+  if (class(colab) == "try-error") stop('Must be in Colab runtime.')
 }

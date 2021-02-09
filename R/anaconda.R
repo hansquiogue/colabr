@@ -59,6 +59,8 @@ setup_anaconda <- function(env = 'r-reticulate') {
 #' @return Exit code of checking conda version
 #' @export
 check_anaconda <- function() {
+  # Checks if running on colab enviroment
+  colabr::check_colab()
   # Exit code of Anaconda version
   return(suppressWarnings(system('command -v conda')))
 }
