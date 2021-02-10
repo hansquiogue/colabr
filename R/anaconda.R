@@ -6,9 +6,6 @@
 #' @export
 download_anaconda <- function() {
 
-  # Checks if running on colab enviroment
-  colabr::check_colab()
-
   # Checks if Anaconda is installed
   if (colabr::check_anaconda() == 0) stop('Anaconda is already installed.')
 
@@ -33,21 +30,24 @@ download_anaconda <- function() {
 #' Default value is 'r-reticulate'.
 setup_anaconda <- function(env = 'r-reticulate') {
 
-  # TODO: Fix handling
-  ## Checks if Anaconda is installed
-  # if (colabr::check_anaconda() != 0) {
-  #  stop('Anaconda is not installed. Download and install with download_anaconda().')
-  # }
+  # Checks if Anaconda is installed
+  if (colabr::check_anaconda() != 0) {
+    stop('Anaconda is not installed. Download and install with download_anaconda().')
+  }
 
   # Checks env
-  # if (!is.character(env)) stop('env must be a string.')
-
-  # Forces conda environment based on user input
-  reticulate::use_condaenv(env, required = TRUE)
+  if (!is.character(env)) stop('env must be a string.')
 
   # Sets reticulate environment to correct path
   path <- paste('/usr/local/envs/', env, '/bin/python', sep = '')
   Sys.setenv(RETICULATE_PYTHON = path)
+
+  # Creates (and removes) conda environment
+  reticulate::conda_remove(env)
+  reticulate::conda_create(env)
+
+  # Forces conda environment based on user input
+  reticulate::use_condaenv(env, required = TRUE)
 
   # Success message
   message(paste('Conda environment set to:', env))
@@ -58,6 +58,8 @@ setup_anaconda <- function(env = 'r-reticulate') {
 #' @return Exit code of checking conda version
 #' @export
 check_anaconda <- function() {
+  # Checks if running on colab enviroment
+  colabr::check_colab()
   # Exit code of Anaconda version
   return(suppressWarnings(system('command -v conda')))
 }
