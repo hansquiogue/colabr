@@ -35,9 +35,9 @@ setup_anaconda <- function(env = 'r-reticulate') {
   Sys.setenv(RETICULATE_PYTHON = path)
 
   # Checks if Anaconda is installed
-  if (colabr::check_anaconda() != 0) {
-    stop('Anaconda is not installed. Download and install with download_anaconda().')
-  }
+  # if (colabr::check_anaconda() != 0) {
+  # stop('Anaconda is not installed. Download and install with download_anaconda().')
+  # }
 
   # Creates (and removes) conda environment
   reticulate::conda_remove(env)
