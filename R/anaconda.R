@@ -21,6 +21,9 @@ download_anaconda <- function() {
   system("conda config --add channels bioconda")
   system("conda config --add channels conda-forge")
 
+  # Creates conda environment
+  system(paste('conda create -n', env))
+
   message('Stopping runtime! Do not worry about the crash error, it is on purpose.')
   message('Restarting notebook...')
   reticulate::py_run_string('import os; os.kill(os.getpid(), 9)')
@@ -40,6 +43,9 @@ setup_anaconda <- function(env = 'r-reticulate') {
 
   # Checks env
   if (!is.character(env)) stop('env must be a string.')
+
+  # Creates conda environment
+  system(paste('conda create -n', env))
 
   # Forces conda environment based on user input
   reticulate::use_condaenv(env, required = TRUE)
