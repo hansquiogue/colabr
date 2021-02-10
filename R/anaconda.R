@@ -6,11 +6,11 @@
 #' @export
 download_anaconda <- function() {
 
-  # Checks if Anaconda is installed
-  if (colabr::check_anaconda() == 0) stop('Anaconda is already installed.')
-
   # Checks if running on colab enviroment
   colabr::check_colab()
+
+  # Checks if Anaconda is installed
+  if (colabr::check_anaconda() == 0) stop('Anaconda is already installed.')
 
   # TODO: Re-comment, progress bars?
   system("wget https://repo.anaconda.com/archive/Anaconda3-2020.02-Linux-x86_64.sh")
@@ -20,9 +20,6 @@ download_anaconda <- function() {
   system("conda update -n base -c defaults conda -y")
   system("conda config --add channels bioconda")
   system("conda config --add channels conda-forge")
-
-  # Creates conda environment
-  system(paste('conda create -n', env))
 
   message('Stopping runtime! Do not worry about the crash error, it is on purpose.')
   message('Restarting notebook...')
@@ -36,16 +33,13 @@ download_anaconda <- function() {
 #' Default value is 'r-reticulate'.
 setup_anaconda <- function(env = 'r-reticulate') {
 
-  # Checks if Anaconda is installed
+  ## Checks if Anaconda is installed
   if (colabr::check_anaconda() != 0) {
     stop('Anaconda is not installed. Download and install with download_anaconda().')
   }
 
   # Checks env
   if (!is.character(env)) stop('env must be a string.')
-
-  # Creates conda environment
-  system(paste('conda create -n', env))
 
   # Forces conda environment based on user input
   reticulate::use_condaenv(env, required = TRUE)
