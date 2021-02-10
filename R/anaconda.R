@@ -30,13 +30,14 @@ download_anaconda <- function() {
 #' Default value is 'r-reticulate'.
 setup_anaconda <- function(env = 'r-reticulate') {
 
+  # TODO: Fix handling (issue with Sys.setenv and commented code)
   # Checks if Anaconda is installed
-  if (colabr::check_anaconda() != 0) {
-    stop('Anaconda is not installed. Download and install with download_anaconda().')
-  }
+  # if (colabr::check_anaconda() != 0) {
+  #  stop('Anaconda is not installed. Download and install with download_anaconda().')
+  #}
 
   # Checks env
-  if (!is.character(env)) stop('env must be a string.')
+  # if (!is.character(env)) stop('env must be a string.')
 
   # Sets reticulate environment to correct path
   path <- paste('/usr/local/envs/', env, '/bin/python', sep = '')
