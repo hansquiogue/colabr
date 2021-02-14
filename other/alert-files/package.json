@@ -1,0 +1,18 @@
+{
+  "name": "google-colab-alerts",
+  "version": "1.0.0",
+  "description": "Google Colab alert generator",
+  "type": "module",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hansquiogue/google-colab-alerts.git"
+  },
+  "keywords": [],
+  "author": "Hans Quiogue",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hansquiogue/google-colab-alerts/issues"
+  },
+  "homepage": "https://github.com/hansquiogue/google-colab-alerts#readme"
+}
