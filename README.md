@@ -1,8 +1,10 @@
 # colabr
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](ttps://colab.research.google.com/github/hansquiogue/colabr/blob/main/colabr_package.ipynb)
+
 ## *Improving or Fixing Functionality with R Notebooks in Google Colaboratory*
 
-colabr is a simple R package aimed at fixing other R package issues and help create better notebooks in Google Colaboratory. For more documentation and example usage of this package, you may reference and use this [Colab notebook.](https://colab.research.google.com/drive/1b5m_w04w1SpwIHLIyyD631_593hy_JLE?usp=sharing)
+colabr is a simple R package aimed at fixing other R package issues and help create better notebooks in Google Colaboratory. For more documentation and example usage of this package, you may reference and use this [Colab notebook.](https://colab.research.google.com/github/hansquiogue/colabr/blob/main/colabr_package.ipynb)
 
 At the moment, `spacyr`, `cleanNLP` and `text2vec` are the only packages implemented with colabr that are working in Google Colab notebooks. 
 
@@ -40,22 +42,22 @@ Note that you will need to repeat the installation process everytime you start a
 
 ## spacyr
 
-Initalizing spacyr will not work properly in Google Colab. This package will simplify and fix the initialization process. For a full guide, please visit this [notebook](https://colab.research.google.com/drive/1b5m_w04w1SpwIHLIyyD631_593hy_JLE#scrollTo=6AsIwJ9McwQj).
+Initalizing spacyr will not work properly in Google Colab. This package will simplify and fix the initialization process. For a full guide, please visit this [notebook](https://colab.research.google.com/github/hansquiogue/colabr/blob/main/colabr_package.ipynb#scrollTo=6AsIwJ9McwQj).
 
 ## cleanNLP
 
-Like spacyr, cleanNLP will not initialize properly in Colab. The process is nearly identical to spacyr and be viewed in this [notebook](https://colab.research.google.com/drive/1b5m_w04w1SpwIHLIyyD631_593hy_JLE#scrollTo=6AsIwJ9McwQj).
+Like spacyr, cleanNLP will not initialize properly in Colab. The process is nearly identical to spacyr and be viewed in this [notebook](https://colab.research.google.com/github/hansquiogue/colabr/blob/main/colabr_package.ipynb#scrollTo=6AsIwJ9McwQj).
 
 ## text2vec
 
-Interactive LDA plots from text2vec do not work in Google Colab. To fix this, [localtunnel](https://localtunnel.me) is used to create a publicly hosted local server for the visualization. For the full guide, here's the [notebook](https://colab.research.google.com/drive/1b5m_w04w1SpwIHLIyyD631_593hy_JLE#scrollTo=5u9iQ-OyaLCA).
+Interactive LDA plots from text2vec do not work in Google Colab. To fix this, [localtunnel](https://localtunnel.me) is used to create a publicly hosted local server for the visualization. For the full guide, here's the [notebook](https://colab.research.google.com/github/hansquiogue/colabr/blob/main/colabr_package.ipynb#scrollTo=5u9iQ-OyaLCA).
 
 # Quality of Life
 
 ## Alerts
 
-With this package, you are able to create alert messages to make your text stand out more. Here's the [notebook](https://colab.research.google.com/drive/1b5m_w04w1SpwIHLIyyD631_593hy_JLE#scrollTo=s-iU-qg7cPV9) of the full alert guide.
+With this package, you are able to create alert messages to make your text stand out more. Here's the [notebook](https://colab.research.google.com/github/hansquiogue/colabr/blob/main/colabr_package.ipynb#scrollTo=s-iU-qg7cPV9) of the full alert guide.
 
 ## Downloading Files
 
-Downloading files in R notebooks in Colab can be bit tricky. Colabr simplifies the process with minimal setup and code. For the full guide, here's the [notebook.](https://colab.research.google.com/drive/1b5m_w04w1SpwIHLIyyD631_593hy_JLE#scrollTo=QrEM9nfNIqIr)
+Downloading files in R notebooks in Colab can be bit tricky. Colabr simplifies the process with minimal setup and code. For the full guide, here's the [notebook.](https://colab.research.google.com/github/hansquiogue/colabr/blob/main/colabr_package.ipynb#scrollTo=QrEM9nfNIqIr)
